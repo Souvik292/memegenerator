@@ -58,38 +58,6 @@ app.get('/api/images', (req, res) => {
 
 
 
-const moodMemeMap = {
-  happy: 'funny',
-  sad: 'relatable',
-  angry: 'rage',
-  excited: 'wholesome',
-};
-
-app.get('/api/meme/:mood', async (req, res) => {
-  const mood = req.params.mood.toLowerCase();
-  const tag = moodMemeMap[mood] || 'random';
-
-  try {
-    const response = await axios.get('https://api.imgflip.com/get_memes');
-    const memes = response.data.data.memes;
-
-    // Filter memes by keyword/tag (very basic filter)
-    const filtered = memes.filter(meme =>
-      meme.name.toLowerCase().includes(tag)
-    );
-
-    const randomMeme =
-      filtered[Math.floor(Math.random() * filtered.length)] ||
-      memes[Math.floor(Math.random() * memes.length)];
-
-    res.json({ meme: randomMeme });
-  } catch (error) {
-    res.status(500).json({ error: 'Error fetching meme' });
-  }
-});
-
-
-
 
 
 mongoose.connect("mongodb+srv://Souvikbhowmick:souvik@29@cluster0.oem9qzq.mongodb.net/Memeblast?retryWrites=true&w=majority&appName=Cluster0");
