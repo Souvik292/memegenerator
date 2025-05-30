@@ -11,7 +11,7 @@ function Memes() {
 
   const fetchMemes = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/memes');
+      const res = await axios.get('https://memegenerator-o4yf.onrender.com/api/memes');
       setMemes(res.data.memes);
     } catch (err) {
       console.error(err);
