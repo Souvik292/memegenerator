@@ -58,9 +58,7 @@ app.get('/api/images', (req, res) => {
 
 
 
-
-
-mongoose.connect("mongodb+srv://Souvikbhowmick:souvik@29@cluster0.oem9qzq.mongodb.net/Memeblast?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect("mongodb+srv://Souvikbhowmick:UHqSbAIWYfV3piqv@cluster0.oem9qzq.mongodb.net/Memeblast?retryWrites=true&w=majority&appName=Cluster0");
 const userschema =mongoose.Schema;
 const dataschema=new userschema({
     email:String,
