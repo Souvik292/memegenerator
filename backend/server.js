@@ -92,7 +92,7 @@ app.get('/api/meme/:mood', async (req, res) => {
 
 
 
-mongoose.connect("mongodb://0.0.0.0:27017/MemeBlast");
+mongoose.connect("mongodb+srv://Souvikbhowmick:souvik@29@cluster0.oem9qzq.mongodb.net/memeblast?retryWrites=true&w=majority&appName=Cluster0");
 const userschema =mongoose.Schema;
 const dataschema=new userschema({
     email:String,
